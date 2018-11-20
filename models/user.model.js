@@ -1,17 +1,13 @@
-const mongoose = require("mongoose");
-
-
-mongoose.Promise = global.Promise;
+const mongoose = require('mongoose');
+ mongoose.connect('mongodb://localhost/asd123',{ useNewUrlParser: true });
+ mongoose.Promise = global.Promise;
 const Schema = mongoose.Schema;
-
-const UserSchema = new Schema({
-    email: { type: String , unique : true , required : true , trim : true},
-    password: { type: String, required : true , trim : true , minlength: 8   },
-    name: { type: String , unique : true , required : true , trim : true },
-    phone: { type: String , unique : true , required : true , trim : true },
-    avatar: { type: String , required: true}
+ const userSchema = new Schema({
+    email: { type: String, required: true, unique: true, trim: true },
+    password: { type: String, required: true, trim: true },
+    name: { type: String, required: true },
+    phone: { type: String, required: true },
+    avatar: { type: String, required: true }
 });
-
-const user = new UserSchema.model('user', UserSchema);
-
-module.exports = user ;
+ const User = mongoose.model('User', userSchema);
+ module.exports = User;
