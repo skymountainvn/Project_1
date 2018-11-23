@@ -6,6 +6,7 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
+    "jquery": "^3.3.1",
     "jsonwebtoken": "^8.4.0",
     "mongoose": "^5.3.12",
     "multer": "^1.4.1",
